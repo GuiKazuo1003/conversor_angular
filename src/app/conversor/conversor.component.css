@@ -1,0 +1,9 @@
+@media (max-width: 830px) {
+    .align-items-center {
+      align-items: stretch;
+    }
+    .d-flex.justify-content-center {
+      display: none;
+    }
+    
+  }

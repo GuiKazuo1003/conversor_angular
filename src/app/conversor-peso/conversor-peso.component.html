@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">Comprimentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">Pesos</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row col-12">
+        <div class="p-1 border bg-dark d-flex justify-content-center">
+          <input type="number" [(ngModel)]="num1">
+        </div>
+    </div>
+
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
+        <input type="radio" name="conversao" value="GramasParaQuilos" [(ngModel)]="resultado">
+        <label class="text-center">
+             Gramas para Quilos
+        </label>
+    </div>
+    
+    </div>
+    
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
+        <input type="radio" name="conversao" value="GramasParaLibras" [(ngModel)]="resultado">
+        <label>
+          Gramas para Libras
+        </label>
+      </div>
+    </div>
+
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
+        <input type="radio" name="conversao" value="QuilosParaGramas" [(ngModel)]="resultado">
+        <label>
+          Quilos para Gramas
+        </label>
+      </div>
+    </div>
+
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
+        <input type="radio" name="conversao" value="QuilosParaLibras" [(ngModel)]="resultado">
+        <label>
+          Quilos para Libras
+        </label>
+      </div>
+    </div>
+
+    <div class="row col-12">
+        <div class="p-1 border bg-light d-flex justify-content-center">
+          <input type="radio" name="conversao" value="LibrasParaGramas" [(ngModel)]="resultado">
+          <label>
+            Libras para Gramas
+          </label>
+        </div>
+    </div>
+    
+    <div class="row col-12">
+        <div class="p-1 border bg-light d-flex justify-content-center">
+          <input type="radio" name="conversao" value="LibrasParaQuilos" [(ngModel)]="resultado">
+          <label>
+            Libras para Quilos
+          </label>
+        </div>
+    </div>
+
+    <div class="result_peso">
+        <div class="d-flex justify-content-center">
+          <div *ngIf="resultado === 'GramasParaQuilos'">
+          <p class="alert alert-success">Resultado: {{(num1 / 1000).toFixed(2)}} Kg</p>
+          </div>
+          <div *ngIf="resultado === 'GramasParaLibras'">
+          <p class="alert alert-success">Resultado: {{(num1 / 453.59237).toFixed(2)}} Libras</p>
+          </div>
+          <div *ngIf="resultado === 'QuilosParaGramas'">
+          <p class="alert alert-success">Resultado: {{(num1 * 1000).toFixed(2)}} Gramas</p>
+          </div>
+          <div *ngIf="resultado === 'QuilosParaLibras'">
+          <p class="alert alert-success">Resultado: {{(num1 * 2.20462).toFixed(2)}} Libras</p>
+          </div>
+          <div *ngIf="resultado === 'LibrasParaGramas'">
+          <p class="alert alert-success">Resultado: {{(num1 * 453.59237).toFixed(2)}} Gramas</p>
+          </div>
+          <div *ngIf="resultado === 'LibrasParaQuilos'">
+          <p class="alert alert-success">Resultado: {{(num1 / 2.20462).toFixed(2)}} Kg</p>
+          </div>
+        </div>
+      </div>

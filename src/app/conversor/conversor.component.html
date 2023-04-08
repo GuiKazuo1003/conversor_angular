@@ -1,53 +1,90 @@
-
-
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="mt-5 , col-3 , align-items-center">
-      <div>
-        <input type="number" [(ngModel)]="num1">
-      </div>
-      <div class="form-check">
-        <input  type="radio" name="conversao" value="cmParaMetros" [(ngModel)]="resultado">
-        <label>
-        Converter cm para metros
+    <div class="d-flex justify-content-center">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="comprimentos">Comprimentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="peso">Pesos</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row col-12">
+        <div class="p-1 border bg-dark d-flex justify-content-center">
+          <input type="number" [(ngModel)]="num1">
+        </div>
+    </div>
+
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
+        <input type="radio" name="conversao" value="cmParaMetros" [(ngModel)]="resultado">
+        <label class="text-center">
+             Cm para Metros
         </label>
-      </div>
-      <div>
-        <input type="radio" name="conversao" value="kmParaMetros" [(ngModel)]="resultado">
-        <label>
-          Converter km para metros
+    </div>
+
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
+        <input type="radio" name="conversao" value="cmParaKm" [(ngModel)]="resultado">
+        <label class="text-center">
+             Cm para Km
         </label>
-      </div>
-      <div >
+    </div>
+
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
         <input type="radio" name="conversao" value="metrosParaKm" [(ngModel)]="resultado">
-        <label>
-          Converter metros para km
+        <label class="text-center">
+          Metros para Km
         </label>
       </div>
-      <div>
+    </div>
+
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
         <input type="radio" name="conversao" value="metrosParaCm" [(ngModel)]="resultado">
-        <label>
-          Converter metros para cm
+        <label class="text-center">
+          Metros para Cm
         </label>
       </div>
     </div>
-  </div>
-</div>
-
-
-
-  <div class="result">
-    <div *ngIf="resultado === 'cmParaMetros'">
-    <p>Resultado: {{num1 / 100}} metros</p>
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
+        <input type="radio" name="conversao" value="kmParaMetros" [(ngModel)]="resultado">
+        <label class="text-center">
+          Km para Metros
+        </label>
+      </div>
     </div>
-    <div *ngIf="resultado === 'kmParaMetros'">
-    <p>Resultado: {{num1 * 1000}} metros</p>
+    <div class="row col-12">
+      <div class="p-1 border bg-light d-flex justify-content-center">
+        <input type="radio" name="conversao" value="kmParaCm" [(ngModel)]="resultado">
+        <label class="text-center">
+          Km para Cm
+        </label>
+      </div>
     </div>
-    <div *ngIf="resultado === 'metrosParaKm'">
-    <p>Resultado: {{num1 / 1000}} km</p>
+      <div class="result">
+          <div class="d-flex justify-content-center">
+            <div *ngIf="resultado === 'cmParaMetros'">
+            <p class="alert alert-success">Resultado: {{(num1 / 100).toFixed(2)}} Metros</p>
+            </div>
+            <div *ngIf="resultado === 'cmParaKm'">
+              <p class="alert alert-success">Resultado: {{(num1 / 100000).toFixed(2)}} Km</p>
+            </div>
+            <div *ngIf="resultado === 'metrosParaCm'">
+            <p class="alert alert-success">Resultado: {{(num1 * 100).toFixed(2)}} Centímetros</p>
+            </div>
+            <div *ngIf="resultado === 'metrosParaKm'">
+            <p class="alert alert-success">Resultado: {{(num1 / 1000).toFixed(2)}} Km</p>
+            </div>
+            <div *ngIf="resultado === 'kmParaMetros'">
+            <p class="alert alert-success">Resultado: {{(num1 * 1000).toFixed(2)}} Metros</p>
+            </div>
+            <div *ngIf="resultado === 'kmParaCm'">
+              <p class="alert alert-success">Resultado: {{(num1 * 100000).toFixed(2)}} Centímetros</p>
+            </div>
+        </div>
+      </div>
     </div>
-    <div *ngIf="resultado === 'metrosParaCm'">
-    <p>Resultado: {{num1 * 100}} centímetros</p>
-    </div>
-  </div>
-  
