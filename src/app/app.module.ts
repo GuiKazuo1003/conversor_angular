@@ -11,7 +11,7 @@ import { ConversorPesoComponent } from './conversor-peso/conversor-peso.componen
 import { AppRoutingModule } from './app-routing.module';
 
 const routes: Routes = [
-  { path: 'conversor_angular', component: ConversorComponent },
+  { path: 'conversor_angular/', component: ConversorComponent },
   { path: '', component: ConversorPesoComponent },
   { path: 'comprimento', component: ConversorComponent }
 ];

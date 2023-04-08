@@ -8,7 +8,6 @@ import { ConversorPesoComponent } from './conversor-peso/conversor-peso.componen
 const routes: Routes = [
   { path: 'conversor_angular', component: ConversorComponent },
   { path: 'peso', component: ConversorPesoComponent },
-  { path: 'comprimento', component: ConversorComponent }
 ];
 
 @NgModule({
