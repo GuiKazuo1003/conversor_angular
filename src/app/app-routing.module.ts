@@ -6,7 +6,7 @@ import { ConversorComponent } from './conversor/conversor.component';
 import { ConversorPesoComponent } from './conversor-peso/conversor-peso.component';
 
 const routes: Routes = [
-  { path: '', component: ConversorComponent },
+  { path: 'conversor_angular', component: ConversorComponent },
   { path: 'peso', component: ConversorPesoComponent },
   { path: 'comprimento', component: ConversorComponent }
 ];
