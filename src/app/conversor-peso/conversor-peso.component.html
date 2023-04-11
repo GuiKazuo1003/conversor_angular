@@ -18,7 +18,7 @@
 
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="GramasParaQuilos" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="GramasParaQuilos" [(ngModel)]="resultado" (change)="Gra_To_Qui()">
         <label class="text-center">
              Gramas para Quilos
         </label>
@@ -28,7 +28,7 @@
     
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="GramasParaLibras" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="GramasParaLibras" [(ngModel)]="resultado" (change)="Gra_To_Li()">
         <label>
           Gramas para Libras
         </label>
@@ -37,7 +37,7 @@
 
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="QuilosParaGramas" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="QuilosParaGramas" [(ngModel)]="resultado" (change)="Qui_To_Gra()">
         <label>
           Quilos para Gramas
         </label>
@@ -46,7 +46,7 @@
 
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="QuilosParaLibras" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="QuilosParaLibras" [(ngModel)]="resultado" (change)="Qui_To_Li()">
         <label>
           Quilos para Libras
         </label>
@@ -55,7 +55,7 @@
 
     <div class="row col-12">
         <div class="p-1 border bg-light d-flex justify-content-center">
-          <input type="radio" name="conversao" value="LibrasParaGramas" [(ngModel)]="resultado">
+          <input type="radio" name="conversao" value="LibrasParaGramas" [(ngModel)]="resultado" (change)="Li_To_Gra()">
           <label>
             Libras para Gramas
           </label>
@@ -64,7 +64,7 @@
     
     <div class="row col-12">
         <div class="p-1 border bg-light d-flex justify-content-center">
-          <input type="radio" name="conversao" value="LibrasParaQuilos" [(ngModel)]="resultado">
+          <input type="radio" name="conversao" value="LibrasParaQuilos" [(ngModel)]="resultado" (change)="Li_To_Qui()">
           <label>
             Libras para Quilos
           </label>
@@ -74,22 +74,22 @@
     <div class="result_peso">
         <div class="d-flex justify-content-center">
           <div *ngIf="resultado === 'GramasParaQuilos'">
-          <p class="alert alert-success">Resultado: {{(num1 / 1000).toFixed(2)}} Kg</p>
+          <p class="alert alert-success">Resultado: {{(GraQui).toFixed(2)}} Kg</p>
           </div>
           <div *ngIf="resultado === 'GramasParaLibras'">
-          <p class="alert alert-success">Resultado: {{(num1 / 453.59237).toFixed(2)}} Libras</p>
+          <p class="alert alert-success">Resultado: {{(GraLi).toFixed(2)}} Libras</p>
           </div>
           <div *ngIf="resultado === 'QuilosParaGramas'">
-          <p class="alert alert-success">Resultado: {{(num1 * 1000).toFixed(2)}} Gramas</p>
+          <p class="alert alert-success">Resultado: {{(QuiGra).toFixed(2)}} Gramas</p>
           </div>
           <div *ngIf="resultado === 'QuilosParaLibras'">
-          <p class="alert alert-success">Resultado: {{(num1 * 2.20462).toFixed(2)}} Libras</p>
+          <p class="alert alert-success">Resultado: {{(QuiLi).toFixed(2)}} Libras</p>
           </div>
           <div *ngIf="resultado === 'LibrasParaGramas'">
-          <p class="alert alert-success">Resultado: {{(num1 * 453.59237).toFixed(2)}} Gramas</p>
+          <p class="alert alert-success">Resultado: {{(LiGra).toFixed(2)}} Gramas</p>
           </div>
           <div *ngIf="resultado === 'LibrasParaQuilos'">
-          <p class="alert alert-success">Resultado: {{(num1 / 2.20462).toFixed(2)}} Kg</p>
+          <p class="alert alert-success">Resultado: {{(LiQui).toFixed(2)}} Kg</p>
           </div>
         </div>
       </div>

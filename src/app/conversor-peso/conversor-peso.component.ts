@@ -18,22 +18,22 @@ export class ConversorPesoComponent {
 
   resultado: any;
 
-  public ConvertGraQui() {
+  Gra_To_Qui() {
     this.GraQui = this.num1 / 1000;
   }
-  public ConvertGraLi() {
+  Gra_To_Li() {
     this.GraLi = this.num1 / 453.59237;
   }
-  public ConvertQuiGra() {
+  Qui_To_Gra() {
     this.QuiGra = this.num1 * 1000;
   }
-  public ConvertQuiLi() {
+  Qui_To_Li() {
     this.QuiLi = this.num1 * 2.20462;
   }
-  public ConvertLiGra() {
+  Li_To_Gra() {
     this.LiGra = this.num1 * 453.59237;
   }
-  public ConvertLiQui() {
+  Li_To_Qui() {
     this.LiQui = this.num1 / 2.20462;
   }
 }

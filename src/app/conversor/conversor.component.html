@@ -18,7 +18,7 @@
 
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="cmParaMetros" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="cmParaMetros" [(ngModel)]="resultado" (change)="Cm_To_Me()">
         <label class="text-center">
              Cm para Metros
         </label>
@@ -26,7 +26,7 @@
 
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="cmParaKm" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="cmParaKm" [(ngModel)]="resultado" (change)="Cm_To_Km()">
         <label class="text-center">
              Cm para Km
         </label>
@@ -34,7 +34,7 @@
 
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="metrosParaKm" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="metrosParaKm" [(ngModel)]="resultado" (change)="Me_To_Km()">
         <label class="text-center">
           Metros para Km
         </label>
@@ -43,7 +43,7 @@
 
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="metrosParaCm" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="metrosParaCm" [(ngModel)]="resultado" (change)="Me_To_Cm()">
         <label class="text-center">
           Metros para Cm
         </label>
@@ -51,7 +51,7 @@
     </div>
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="kmParaMetros" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="kmParaMetros" [(ngModel)]="resultado" (change)="Km_To_Me()">
         <label class="text-center">
           Km para Metros
         </label>
@@ -59,7 +59,7 @@
     </div>
     <div class="row col-12">
       <div class="p-1 border bg-light d-flex justify-content-center">
-        <input type="radio" name="conversao" value="kmParaCm" [(ngModel)]="resultado">
+        <input type="radio" name="conversao" value="kmParaCm" [(ngModel)]="resultado" (change)="Km_To_Cm()">
         <label class="text-center">
           Km para Cm
         </label>
@@ -68,22 +68,22 @@
       <div class="result">
           <div class="d-flex justify-content-center">
             <div *ngIf="resultado === 'cmParaMetros'">
-            <p class="alert alert-success">Resultado: {{(num1 / 100).toFixed(2)}} Metros</p>
+            <p class="alert alert-success">Resultado: {{(Cm_Me).toFixed(2)}} Metros</p>
             </div>
             <div *ngIf="resultado === 'cmParaKm'">
-              <p class="alert alert-success">Resultado: {{(num1 / 100000).toFixed(2)}} Km</p>
+              <p class="alert alert-success">Resultado: {{(Cm_Km).toFixed(2)}} Km</p>
             </div>
             <div *ngIf="resultado === 'metrosParaCm'">
-            <p class="alert alert-success">Resultado: {{(num1 * 100).toFixed(2)}} Centímetros</p>
+            <p class="alert alert-success">Resultado: {{(Me_Cm).toFixed(2)}} Centímetros</p>
             </div>
             <div *ngIf="resultado === 'metrosParaKm'">
-            <p class="alert alert-success">Resultado: {{(num1 / 1000).toFixed(2)}} Km</p>
+            <p class="alert alert-success">Resultado: {{(Me_Km).toFixed(2)}} Km</p>
             </div>
             <div *ngIf="resultado === 'kmParaMetros'">
-            <p class="alert alert-success">Resultado: {{(num1 * 1000).toFixed(2)}} Metros</p>
+            <p class="alert alert-success">Resultado: {{(Km_Me).toFixed(2)}} Metros</p>
             </div>
             <div *ngIf="resultado === 'kmParaCm'">
-              <p class="alert alert-success">Resultado: {{(num1 * 100000).toFixed(2)}} Centímetros</p>
+              <p class="alert alert-success">Resultado: {{(Km_Cm).toFixed(2)}} Centímetros</p>
             </div>
         </div>
       </div>
